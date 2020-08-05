@@ -306,6 +306,8 @@ func realnums() {
 	fmt.Println(savings == 0.3)
 	fmt.Println(math.Abs(savings-0.3) < 0.0001)
 
+	fmt.Println("Changed Git Directory")
+
 }
 
 func types() {
