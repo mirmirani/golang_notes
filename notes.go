@@ -313,6 +313,13 @@ func realnums() {
 func types() {
 	ch = "Real numbers (pg. 60)"
 	fmt.Println(lb, ch, lb)
+
+	var year_1 int = 2018
+	var month_1 unit = 2
+	year_3 := 2018
+	var year_4 = 2018
+	var year_5 int = 2018
+
 }
 
 func main() {
