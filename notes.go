@@ -325,6 +325,39 @@ func types() {
 
 	fmt.Println("Interger types:\nint8 'uint8', 'int16', 'uint16', 'int32', 'unit32', 'int64', 'uint64 ")
 
+	year := 2018
+	fmt.Printf("Type %T for %v\n", year, year)
+
+	days := 365.2425
+	fmt.Printf("Type %T for %[1]v\n", days)
+
+	fmt.Printf("Type %T for %[1]v\n", "purity")
+
+	var red, green, blue uint8 = 255, 141, 213
+	println(red, "\n", green, "\n", blue)
+
+	red++
+	fmt.Println(red)
+
+	var number int8 = 127
+	number++
+	fmt.Println(number)
+
+	green = 3
+	fmt.Printf("%08b\n", green)
+	green++
+	fmt.Printf("%08b\n", green)
+
+	blue = 255
+	blue++
+	fmt.Printf("%08b\n", blue)
+
+	future := time.Unix(12622780800, 0)
+	fmt.Println(future)
+}
+
+func big_numbers() {
+
 }
 
 func main() {
@@ -341,6 +374,7 @@ func main() {
 	realnums()
 	//ba_types()
 	types()
+	big_numbers()
 }
 
 var ch string
