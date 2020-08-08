@@ -177,6 +177,7 @@ func ac_imperatives() {
 	for count2 = 10; count2 > 0; count2-- {
 		fmt.Println(count2)
 	}
+
 	fmt.Println(count2)
 
 	for count2 := 10; count2 > 0; count2-- {
@@ -314,11 +315,15 @@ func types() {
 	ch = "Real numbers (pg. 60)"
 	fmt.Println(lb, ch, lb)
 
-	var year_1 int = 2018
-	var month_1 unit = 2
-	year_3 := 2018
-	var year_4 = 2018
-	var year_5 int = 2018
+	//var year_1 int = 2018
+	//var month_1 uint = 2
+	//year_3 := 2018
+	//var year_4 = 2018
+	//var year_5 int = 2018
+
+	fmt.Println("There are many integer types \n int integers are neg to pos while unit integers are positive")
+
+	fmt.Println("int8 'uint8', 'int16', 'uint16', 'int32', 'unit32', 'int64', 'uint64 ")
 
 }
 
@@ -335,7 +340,7 @@ func main() {
 	// Global variables
 	realnums()
 	//ba_types()
-
+	types()
 }
 
 var ch string
