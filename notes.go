@@ -321,9 +321,9 @@ func types() {
 	//var year_4 = 2018
 	//var year_5 int = 2018
 
-	fmt.Println("There are many integer types \n int integers are neg to pos while unit integers are positive")
+	fmt.Println("There are many integer types \nint integers are neg to pos \n while unit integers are positive \n")
 
-	fmt.Println("int8 'uint8', 'int16', 'uint16', 'int32', 'unit32', 'int64', 'uint64 ")
+	fmt.Println("Interger types:\nint8 'uint8', 'int16', 'uint16', 'int32', 'unit32', 'int64', 'uint64 ")
 
 }
 
