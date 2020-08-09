@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"math/big"
 	"math/rand"
 	"strings"
 	"time"
@@ -357,6 +358,25 @@ func types() {
 }
 
 func big_numbers() {
+	const lightSpeed = 2999792 //km/s
+	const secondsPerDay = 86400
+	var distance int64 = 41.3e12
+	fmt.Println("Alpha Centauri is", distance, "km away.")
+	days := distance / lightSpeed / secondsPerDay
+	fmt.Println("That is", days, "days of travel at light speed.")
+}
+
+func big_numbers2() {
+	lightSpeed := big.NewInt(299792)
+	secondsPerDay := big.NewInt(86400)
+	distance := new(big.Int)
+	distance.SetString("24000000000000000000", 10)
+	fmt.Println("Andromeda Galaxy is", distance, "km away.")
+	seconds := new(big.Int)
+	seconds.Div(distance, lightSpeed)
+	days := new(big.Int)
+	days.Div(seconds, secondsPerDay)
+	fmt.Println("That is", days, "days of travel at light speed.")
 
 }
 
@@ -375,6 +395,7 @@ func main() {
 	//ba_types()
 	types()
 	big_numbers()
+	big_numbers2()
 }
 
 var ch string
