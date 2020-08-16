@@ -380,17 +380,39 @@ func big_numbers2() {
 
 }
 
-func big_numbers2() {
-	lightSpeed := big.NewInt(299792)
-	secondsPerDay := big.NewInt(86400)
-	distance := new(big.Int)
-	distance.SetString("24000000000000000000", 10)
-	fmt.Println("Andromeda Galaxy is", distance, "km away.")
-	seconds := new(big.Int)
-	seconds.Div(distance, lightSpeed)
-	days := new(big.Int)
-	days.Div(seconds, secondsPerDay)
-	fmt.Println("That is", days, "days of travel at light speed.")
+func big_nums3() {
+	//consts are untyped
+	const distance = 24000000000000000000
+	const lightSpeed = 299792   //km/s
+	const secondsPerDay = 86400 //s/d
+	//km := distance //will overflow (err)
+	days := distance / lightSpeed / secondsPerDay
+
+	fmt.Println("Andromeda Galaxy is", days, "light days away")
+	//const values can be assigned to variables as long as they fit.
+
+	//Untyped constants must be converted to typed variables when passed to functions.
+
+}
+
+func multi_text() {
+	peace1 := "peace"
+	var peace2 = "Peace"
+	var peace string = "peace"
+
+	var blank string
+	blank = "so much peace"
+	fmt.Println(peace, peace1, peace2, blank)
+	fmt.Println("Peace be upon you\nUpon you be peace")
+	fmt.Println(`Strings can span multiple lines with the \n escape sequence`)
+	fmt.Println(`
+Peace be upon you
+	upon you be peace
+	
+	`)
+
+	fmt.Printf("%v is a %[1]T\n", "literal string")
+	fmt.Printf("%v is a %[1]T\n", `raw string literal`)
 
 }
 
@@ -410,6 +432,8 @@ func main() {
 	types()
 	big_numbers()
 	big_numbers2()
+	big_nums3()
+	multi_text()
 }
 
 var ch string
