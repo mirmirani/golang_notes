@@ -416,6 +416,69 @@ Peace be upon you
 
 }
 
+func runes_n_bytes() {
+	var pi rune = 960
+	var alpha rune = 940
+	var omega rune = 969
+	var bang byte = 33
+
+	fmt.Printf("%v %v %v %v \n", pi, alpha, omega, bang)
+	fmt.Printf("%c %c %c %c \n", pi, alpha, omega, bang)
+
+	g1 := 'A'
+	var g2 = 'A'
+	var g3 rune = 'A'
+	var star byte = '*'
+
+	fmt.Printf("%c %c %c %c \n", g1, g2, g3, star)
+}
+
+func more_types() {
+
+	peace := "shalom"
+	peace = "salām"
+	fmt.Printf("%v \n", peace)
+
+	message := "salām"
+	c := message[5]
+	fmt.Printf("%c\n", c)
+	fmt.Printf(`
+strings are immutable so
+message[5] = 'd' 
+is not possible
+
+`)
+
+}
+
+func caesar_cypher() {
+
+	/*
+			c := 'a'
+		c = c - 3
+		fmt.Printf("%c\n", c)
+
+			if c > 'z' {
+				c = c - 26
+			}
+	*/
+
+	message := `fdph
+vdz
+frqtxhuhg
+	`
+	for i := 0; i < 20; i++ {
+		c := message[i]
+		if c < 'a' {
+			c = c + 26
+		}
+		c = c - 3
+		fmt.Printf("%c\n", c)
+
+	}
+
+}
+
 func main() {
 
 	rand.Seed(time.Now().UnixNano())
@@ -434,6 +497,9 @@ func main() {
 	big_numbers2()
 	big_nums3()
 	multi_text()
+	runes_n_bytes()
+	more_types()
+	caesar_cypher()
 }
 
 var ch string
