@@ -479,6 +479,12 @@ frqtxhuhg
 
 }
 
+func rot13() {
+	message := "uv vagreangvbany fcnpr fgngvba"
+	fmt.Println(len(message))
+
+}
+
 func main() {
 
 	rand.Seed(time.Now().UnixNano())
@@ -500,6 +506,7 @@ func main() {
 	runes_n_bytes()
 	more_types()
 	caesar_cypher()
+	rot13()
 }
 
 var ch string
