@@ -7,6 +7,7 @@ import (
 	"math/rand"
 	"strings"
 	"time"
+	"unicode/utf8"
 )
 
 func aa_imperatives() {
@@ -473,7 +474,7 @@ frqtxhuhg
 			c = c + 26
 		}
 		c = c - 3
-		fmt.Printf("%c\n", c)
+		fmt.Printf("%c", c)
 
 	}
 
@@ -483,6 +484,45 @@ func rot13() {
 	message := "uv vagreangvbany fcnpr fgngvba"
 	fmt.Println(len(message))
 
+	for i := 0; i < len(message); i++ {
+		c := message[i]
+		if c >= 'a' && c <= 'z' {
+			c = c + 13
+			if c > 'z' {
+				c = c - 26
+			}
+		}
+		fmt.Printf("%c", c)
+	}
+	fmt.Println("\n\n")
+}
+
+func utf_pkg() {
+	question := "¿Cómo estás?"
+
+	fmt.Println(len(question), "bytes")
+	fmt.Println(utf8.RuneCountInString(question), "runes")
+
+	c, size := utf8.DecodeRuneInString(question)
+	fmt.Printf("First rune: %c %v bytes", c, size)
+
+	fmt.Printf("\n")
+
+	for _, c := range question {
+		fmt.Printf("%c\n", c)
+	}
+}
+
+func type_conversion() {
+	//types don't mix
+	age := 41
+	marsAge := float64(age)
+
+	marsDays := 687.0
+	earthDays := 365.2425
+	marsAge = marsAge * earthDays / marsDays
+	fmt.Println("I am", marsAge, "years old on Mars.")
+	fmt.Println(int(earthDays))
 }
 
 func main() {
@@ -507,6 +547,9 @@ func main() {
 	more_types()
 	caesar_cypher()
 	rot13()
+	utf_pkg()
+	type_conversion()
+
 }
 
 var ch string
