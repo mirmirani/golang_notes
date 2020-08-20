@@ -5,6 +5,7 @@ import (
 	"math"
 	"math/big"
 	"math/rand"
+	"strconv"
 	"strings"
 	"time"
 	"unicode/utf8"
@@ -525,6 +526,41 @@ func type_conversion() {
 	fmt.Println(int(earthDays))
 }
 
+func type_conversion_2() {
+	//types don't mix
+	var bh float64 = 32767
+	var h = int16(bh)
+	fmt.Println(h)
+	if bh < math.MinInt16 || bh > math.MaxInt16 {
+		fmt.Println("out of range")
+	}
+
+	var pi rune = 960
+	var alpha rune = 940
+	var omega rune = 969
+	var bang byte = 33
+	fmt.Print(string(pi), string(alpha), string(omega), string(bang))
+
+	countdown := 10
+	str := "\nLaunch in T minus " + strconv.Itoa(countdown) + " seconds."
+	fmt.Println(str)
+
+	countdown_2 := 9
+	str_2 := fmt.Sprintf("Launch in T minus %v seconds.", countdown_2)
+	fmt.Println(str_2)
+
+	countdown, err := strconv.Atoi("10")
+	if err != nil {
+
+	}
+	fmt.Println(countdown)
+
+}
+
+func convert_booleans() {
+	return
+}
+
 func main() {
 
 	rand.Seed(time.Now().UnixNano())
@@ -549,7 +585,8 @@ func main() {
 	rot13()
 	utf_pkg()
 	type_conversion()
-
+	type_conversion_2()
+	convert_booleans()
 }
 
 var ch string
