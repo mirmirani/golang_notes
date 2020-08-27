@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func aa() {
+func convert_booleans() {
 	fmt.Println("New Go Chapters")
 
 }

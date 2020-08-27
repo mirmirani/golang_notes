@@ -558,7 +558,23 @@ func type_conversion_2() {
 }
 
 func convert_booleans() {
-	return
+	launch := true
+	launchText := fmt.Sprintf("%v", launch)
+	fmt.Println("Ready for launch", launchText)
+
+	var yesNo string
+	if launch {
+		yesNo = "yes"
+	} else {
+		yesNo = "no"
+	}
+	fmt.Println("Ready for launch:", yesNo)
+}
+
+func convert_booleans_2() {
+	yesNo := "no"
+	launch := (yesNo == "yes")
+	fmt.Println("Ready for launch:", launch)
 }
 
 func main() {
@@ -587,6 +603,7 @@ func main() {
 	type_conversion()
 	type_conversion_2()
 	convert_booleans()
+	convert_booleans_2()
 }
 
 var ch string
