@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func convert_booleans() {
+func functions_1() {
 	fmt.Println("New Go Chapters")
 
 }
@@ -15,6 +15,6 @@ func main() {
 
 	rand.Seed(time.Now().UnixNano())
 
-	aa()
+	functions_1()
 
 }
